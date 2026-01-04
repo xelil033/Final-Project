@@ -1246,3 +1246,98 @@
         font-size: 15px
     }
 }
+
+/* Payment Modal */
+.pay-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.pay-modal.is-open {
+  display: block;
+}
+
+.pay-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.pay-modal__dialog {
+  position: relative;
+  width: min(92vw, 520px);
+  margin: 8vh auto 0;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.pay-modal__title {
+  margin: 0 0 16px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2e2e2e;
+}
+
+.pay-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 10px;
+  background: #f2f2f2;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 40px;
+}
+
+.pay-form__label {
+  display: block;
+  font-size: 14px;
+  color: #2e2e2e;
+  margin-bottom: 12px;
+}
+
+.pay-form__input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 12px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+.pay-form__input:focus {
+  border-color: #ff7a00;
+}
+
+.pay-form__row {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr 0.9fr;
+  gap: 12px;
+}
+
+.pay-form__error {
+  margin: 6px 0 12px;
+  color: #b00020;
+  min-height: 18px;
+  font-size: 13px;
+}
+
+.pay-form__submit {
+  width: 100%;
+  border: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: red;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}

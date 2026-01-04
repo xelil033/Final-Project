@@ -376,10 +376,85 @@
       </ul>
     </div>
   </div>
+<div class="pay-modal" id="payModal" aria-hidden="true">
+  <div class="pay-modal__overlay" data-pay-close></div>
+
+  <div class="pay-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+    <button class="pay-modal__close" type="button" aria-label="Close" data-pay-close>×</button>
+
+    <h3 class="pay-modal__title" id="payTitle">Kartla ödəniş</h3>
+
+    <form class="pay-form" id="payForm" novalidate>
+      <label class="pay-form__label">
+        Kart nömrəsi (16 rəqəm)
+        <input
+          class="pay-form__input"
+          id="cardNumber"
+          name="cardNumber"
+          inputmode="numeric"
+          autocomplete="cc-number"
+          placeholder="1234 5678 9012 3456"
+          maxlength="19"
+          required
+        />
+      </label>
+
+      <div class="pay-form__row">
+        <label class="pay-form__label">
+          CVV
+          <input
+            class="pay-form__input"
+            id="cvv"
+            name="cvv"
+            inputmode="numeric"
+            autocomplete="cc-csc"
+            placeholder="123"
+            maxlength="4"
+            required
+          />
+        </label>
+
+        <label class="pay-form__label">
+          Ay
+          <input
+            class="pay-form__input"
+            id="expMonth"
+            name="expMonth"
+            inputmode="numeric"
+            autocomplete="cc-exp-month"
+            placeholder="MM"
+            maxlength="2"
+            required
+          />
+        </label>
+
+        <label class="pay-form__label">
+          İl
+          <input
+            class="pay-form__input"
+            id="expYear"
+            name="expYear"
+            inputmode="numeric"
+            autocomplete="cc-exp-year"
+            placeholder="YYYY"
+            maxlength="4"
+            required
+          />
+        </label>
+      </div>
+
+      <p class="pay-form__error" id="payError" aria-live="polite"></p>
+
+      <button class="pay-form__submit" type="submit">Təsdiqlə</button>
+    </form>
+  </div>
+</div>
 
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="js/burger.js"></script>
   <script src="js/accordion.js"></script>
   <script src="js/index.js"></script>
+  <script src="js/payment.js"></script>
+
 </body>
 </html>
