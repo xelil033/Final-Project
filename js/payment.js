@@ -3,7 +3,7 @@
   const modal = document.getElementById("payModal");
   if (!modal) return;
 
-  const openBtn = document.querySelector(".pay"); // your "Ödəmək" button
+  const openBtn = document.querySelector(".pay"); 
   const closeBtns = modal.querySelectorAll("[data-pay-close]");
   const form = document.getElementById("payForm");
   const errorEl = document.getElementById("payError");
@@ -25,28 +25,28 @@
     modal.setAttribute("aria-hidden", "true");
   }
 
-  // Open on Pay button click
+
   openBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     openModal();
   });
 
-  // Close on overlay / close button
+
   closeBtns.forEach((btn) => btn.addEventListener("click", closeModal));
 
-  // Close on ESC
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
   });
 
-  // Format card number as "1234 5678 9012 3456"
+  
   cardInput?.addEventListener("input", () => {
     const digits = cardInput.value.replace(/\D/g, "").slice(0, 16);
     const spaced = digits.replace(/(\d{4})(?=\d)/g, "$1 ");
     cardInput.value = spaced;
   });
 
-  // Only digits in CVV/MM/YYYY
+ 
   [cvvInput, monthInput, yearInput].forEach((inp) => {
     inp?.addEventListener("input", () => {
       inp.value = inp.value.replace(/\D/g, "");
@@ -77,7 +77,7 @@
     if (!yyyy || yyyy.length !== 4) return showError("İl YYYY formatında olmalıdır.");
     if (yearNum < currentYear) return showError("Kartın müddəti bitib.");
 
-    // ✅ Demo action (DON'T collect/store real card data)
+   
     alert("Ödəniş məlumatları qəbul edildi (demo).");
     form.reset();
     closeModal();
